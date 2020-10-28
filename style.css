@@ -1,3 +1,6 @@
+body{
+    overflow: hidden;
+}
 .gamecont{
     background: url('bgg.jpg');
     height:100vh;
@@ -8,24 +11,28 @@
     
 }
 .dragon1{
-    background-color:black;
-    border:2px solid red;
     width:40px;
     height:65px;
     position: absolute;
-    top:90vh;
+    top:84vh;
     left:20vw;
     z-index:1;
 }
+.dragon1 img{
+    width:80px;
+    height:120px;
+}
 .dragon2{
-    background-color:red;
-    border:2px solid black;
     width:40px;
     height:65px;
     position: absolute;
-    top:90vh;
+    top:80vh;
     left:80vw;
     z-index:1;
+}
+.dragon2 img{
+    width:120px;
+    height:160px;
 }
 .animd1{
     animation: run_d1 1.2s linear;
@@ -60,7 +67,20 @@
     top:40px;
     right:40px;
     font-size:50px;
-    color:purple;
-    border:2px solid purple;
+    color:rgb(32, 9, 32);
+    border:4px solid rgb(0, 0, 0);
     padding: 18px 12px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.name{
+    z-index:4;
+    position:absolute;
+    top:40px;
+    left:3%;
+    color:rgb(7, 6, 36);
+    font-family: monospace;
+    font-weight: bolder;
+    font-size:50px;
+    text-decoration: underline;
+    
 }

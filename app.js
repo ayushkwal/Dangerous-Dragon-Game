@@ -1,6 +1,9 @@
 const d1 = document.getElementById('dragon1');
 const d2 = document.getElementById('dragon2');
 const bg = document.getElementById('gamecont');
+const audio = document.getElementById('myAudio');
+const audio2 = document.getElementById('myAudio2');
+audio.play();
 let score = 0;
 let cross = true;
 d2.classList.add('animd2');
@@ -19,7 +22,9 @@ if(e.keyCode==39)
 { 
     let dx = parseInt(window.getComputedStyle(d1,null).getPropertyValue('left'));
     // console.log(d1x);
-    d1.style.left = dx + 200 + "px";
+    if(dx>-17&&dx<1010)
+    {d1.style.left = dx + 200 + "px";}
+    
     // console.log(d1x);
 
 }
@@ -27,7 +32,9 @@ if(e.keyCode==37)
 { 
     let dx = parseInt(window.getComputedStyle(d1,null).getPropertyValue('left'));
     // console.log(d1x);
+    if(dx>60&&dx<1200){
     d1.style.left = dx - 200 + "px";
+    }
     // console.log(d1x);
 
 }
@@ -43,9 +50,15 @@ setInterval(() => {
    offsetY = Math.abs(d1y-d2y);
    if(offsetX<70&&offsetY<70)
    {
-       bg.style.display = "none";
+    //    bg.style.display = "none";
+       audio.pause();
+       audio2.play();
        localStorage.setItem('score', score);
-       window.open('gameover.html', "_self");
+       d1.style.display = "none";
+       setTimeout(()=>{
+        window.open('gameover.html', "_self");
+       },4000);
+       
 
     console.log("collapse");
     }
